@@ -29,20 +29,20 @@ To run this project on your PC, follow these steps:
 
 ### Backend Setup
 
-1. Clone the repository to your local machine.
+1. Clone the repository to your local machine.   
 
-Navigate to the backend folder and frontend folder.
+Navigate to the backend folder and frontend folder.   
 
-npm install
-npm run
+npm install   
+npm run   
 
 
-Set up environment variables. Create a .env file in the backend directory and add the following:
+Set up environment variables. Create a .env file in the backend directory and add the following:    
 
-PORT=port
-YOUR_API_KEY=your-fast2sms-api-key
-MONGODB_URI=your-mongodb-connection-uri
-Replace your-fast2sms-api-key with your Fast2SMS API key and your-mongodb-connection-uri with your MongoDB connection URI.
+PORT=port    
+YOUR_API_KEY=your-fast2sms-api-key   
+MONGODB_URI=your-mongodb-connection-uri    
+Replace your-fast2sms-api-key with your Fast2SMS API key and your-mongodb-connection-uri with your MongoDB connection URI.    
 
 
 The frontend should now be running on http://localhost:3000.
