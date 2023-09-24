@@ -39,9 +39,9 @@ const signinUser = async(req,res) => {
     }
 
     const otp = generateOTP();
-
+    
     try {
-        sendOTP(otp, phoneNumber, res);
+        await sendOTP(otp, phoneNumber, res);
 
         const oldUser = await User.findOne({phoneNumber: phoneNumber});
 
