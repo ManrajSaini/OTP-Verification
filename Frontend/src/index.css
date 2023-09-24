@@ -1,0 +1,44 @@
+/* global styles */
+body {
+  margin: 0;
+  height: 100vh;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Work Sans;
+  font-size: 24px;
+
+  background-color: rgb(245, 242, 242);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.app-body {
+  width: 375px;
+  height: 812px;
+  max-width: 375px;
+
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 350px) {
+  .app-body {
+    width: 100vw;
+  }
+}
