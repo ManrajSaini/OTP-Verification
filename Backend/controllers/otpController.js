@@ -10,7 +10,7 @@ const clearOldOTP = require("../utils/clearOTP");
 dotenv.config();
 
 const signinUser = async(req,res) => {
-    
+    const countryCode = req.body.countryCode;
     const phoneNumber = req.body.phoneNumber;
 
     if(!phoneNumber){
@@ -21,8 +21,9 @@ const signinUser = async(req,res) => {
             "data": null
         });
     }
-
+    
     const inputSchema = Joi.object({
+        countryCode: Joi.string().required(),
         phoneNumber: Joi.string().required().pattern(/^[0-9]{10}$/)
     });
 
@@ -55,19 +56,19 @@ const signinUser = async(req,res) => {
                 "error_code": 200,
                 "message": "OTP sent successfully",
                 "data": oldUser
-            });
+            }); 
         }
 
         else{
             const newUser = new User({
-                countryCode: req.body.countryCode,
+                countryCode: countryCode,
                 phoneNumber: phoneNumber,
                 otp: otp,
                 createdAt: new Date().toLocaleString("en-Us", {timeZone: 'Asia/Kolkata'})
             });
 
             await newUser.save();
-
+            
             return res.send({
                 "success": true,
                 "error_code": 200,
@@ -80,7 +81,7 @@ const signinUser = async(req,res) => {
         return res.send({
             "success": false,
             "error_code": 500,
-            "message": "hello ",
+            "message": err.message,
             "data": null
         });
     }

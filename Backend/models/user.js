@@ -2,11 +2,13 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
     countryCode: {
-        type: String
+        type: String,
+        required: true
     },
     phoneNumber: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     otp: {
         type: Number
