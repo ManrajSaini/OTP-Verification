@@ -42,20 +42,20 @@ Set up environment variables. Create a .env file in the backend directory and ad
 PORT=port    
 YOUR_API_KEY=your-fast2sms-api-key   
 MONGODB_URI=your-mongodb-connection-uri    
-Replace your-fast2sms-api-key with your Fast2SMS API key and your-mongodb-connection-uri with your MongoDB connection URI.    
+Replace your-fast2sms-api-key with your Fast2SMS API key and your-mongodb-connection-uri with your MongoDB connection URI.        
 
 
-The frontend should now be running on http://localhost:3000.
-The Backend is deployed on render (link): https://otp-verification-ir24.onrender.com 
+The frontend should now be running on http://localhost:3000.    
+The Backend is deployed on render (link): https://otp-verification-ir24.onrender.com     
 
-Open your web browser and go to http://localhost:3000 to access the app.
+Open your web browser and go to http://localhost:3000 to access the app.    
 
-# Basic Validations
-Mobile number should be 10 digits and consist only of numbers.
-OTP verification is required, and an error message will be displayed if the OTP is not matched.
+# Basic Validations   
+Mobile number should be 10 digits and consist only of numbers.    
+OTP verification is required, and an error message will be displayed if the OTP is not matched.    
 
-# Technologies Used
-React for the frontend.
-Node.js and Express.js for the backend.
-MongoDB for data storage.
-Fast2SMS API for sending OTP messages.
+# Technologies Used    
+React for the frontend.    
+Node.js and Express.js for the backend.    
+MongoDB for data storage.   
+Fast2SMS API for sending OTP messages.   
