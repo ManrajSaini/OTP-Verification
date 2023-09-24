@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
     countryCode: {
         type: String,
-        required: true,
         unique: true
     },
     phoneNumber: {

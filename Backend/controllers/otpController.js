@@ -10,7 +10,7 @@ const clearOldOTP = require("../utils/clearOTP");
 dotenv.config();
 
 const signinUser = async(req,res) => {
-    const countryCode = req.body.countryCode;
+    
     const phoneNumber = req.body.phoneNumber;
 
     if(!phoneNumber){
@@ -23,7 +23,6 @@ const signinUser = async(req,res) => {
     }
 
     const inputSchema = Joi.object({
-        countryCode: Joi.string().required(),
         phoneNumber: Joi.string().required().pattern(/^[0-9]{10}$/)
     });
 
