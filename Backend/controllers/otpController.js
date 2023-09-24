@@ -80,7 +80,7 @@ const signinUser = async(req,res) => {
         return res.send({
             "success": false,
             "error_code": 500,
-            "message": err.message,
+            "message": "hello ",
             "data": null
         });
     }
