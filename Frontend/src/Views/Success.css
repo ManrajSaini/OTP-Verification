@@ -1,58 +1,106 @@
 /* Styles for success page */
 .art-image {
-    margin-top: 91px;
-    margin-left: -10px;
+  margin-top: 25%;
+  /* Adjust margin for responsiveness */
+  margin-left: -5%;
+  /* Adjust margin for responsiveness */
+  width: 90%;
+  /* Adjust image width for responsiveness */
+  max-width: 400px;
+  /* Set a max-width for the image */
+}
+
+.heading {
+  margin-top: 5%;
+  /* Adjust margin for responsiveness */
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.2em;
+  /* Adjust font size for larger screens */
+  line-height: 1.2;
+  color: #333333;
+  text-align: center;
+}
+
+.description {
+  margin-top: 3%;
+  /* Adjust margin for responsiveness */
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.8em;
+  /* Adjust font size for larger screens */
+  line-height: 1.2;
+  text-align: center;
+  color: #999999;
+}
+
+.description span {
+  color: #333333;
+}
+
+.submit-button {
+  margin-top: 5%;
+  /* Adjust margin for responsiveness */
+  width: 60%;
+  /* Adjust button width for responsiveness */
+  max-width: 200px;
+  /* Set a max-width for the button */
+  height: 36px;
+  padding: 5px;
+  background: #f7b348;
+  border-radius: 100px;
+  border: none;
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1em;
+  /* Adjust font size for larger screens */
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.submit-info {
+  margin: 0;
+  margin-top: 2%;
+  /* Adjust margin for responsiveness */
+  font-size: 0.8em;
+  /* Adjust font size for smaller screens */
+  color: #999999;
+  text-align: center;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .art-image {
+    width: 80%;
+    /* Adjust image width for smaller screens */
+    max-width: 300px;
+    /* Adjust max-width for smaller screens */
   }
-  
+
   .heading {
-    margin-top: 47px;
-  
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 28px;
-  
-    color: #333333;
+    font-size: 1.2em;
+    /* Adjust font size for smaller screens */
   }
-  
+
   .description {
-    margin-top: 25px;
-  
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-  
-    color: #999999;
+    font-size: 0.9em;
+    /* Adjust font size for smaller screens */
   }
-  
-  .description span {
-    color: #333333;
-  }
-  
+
   .submit-button {
-    margin-top: 40px;
-  
-    width: 141px;
-    height: 36px;
-    padding: 5px;
-  
-    background: #f7b348;
-    border-radius: 100px;
-    border: none;
-  
-    color: white;
-  
-    font-family: Work Sans;
-    font-size: 0.58em;
-    font-weight: 700;
+    width: 70%;
+    /* Adjust button width for smaller screens */
+    max-width: 180px;
+    /* Adjust max-width for smaller screens */
+    font-size: 0.9em;
+    /* Adjust font size for smaller screens */
   }
-  
+
   .submit-info {
-    margin: 0px;
-    margin-top: 8px;
-  
-    font-size: 12px;
-    color: #999999;
+    font-size: 0.7em;
+    /* Adjust font size for smaller screens */
   }
+}

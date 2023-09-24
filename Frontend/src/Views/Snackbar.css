@@ -22,3 +22,26 @@
     color: white;
     cursor: pointer;
 }
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .snackbar {
+        width: 90%;
+        /* Adjust width for smaller screens */
+        max-width: 400px;
+        /* Set a max-width for the snackbar */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .snackbar {
+        width: 80%;
+        /* Adjust width for even smaller screens */
+        max-width: 300px;
+        /* Set a smaller max-width */
+        padding: 8px 16px;
+        /* Reduce padding for smaller screens */
+        font-size: 0.8em;
+        /* Adjust font size for smaller screens */
+    }
+}

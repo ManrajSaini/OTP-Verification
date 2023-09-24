@@ -2,6 +2,7 @@
 body {
   margin: 0;
   height: 100vh;
+  overflow: hidden;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,8 +11,8 @@ body {
   justify-content: center;
   align-items: center;
 
-  font-family: Work Sans;
-  font-size: 24px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
 
   background-color: rgb(245, 242, 242);
 }
@@ -21,15 +22,19 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+/* Specific styling for .app-body */
 .app-body {
   width: 375px;
   height: 812px;
   max-width: 375px;
 
+  margin-top: 20%;
+  margin-bottom: 20%;
+  
   background-color: white;
 
   display: flex;
@@ -37,8 +42,11 @@ code {
   align-items: center;
 }
 
+/* Media query for responsiveness */
 @media screen and (max-width: 350px) {
   .app-body {
     width: 100vw;
+    max-width: none;
+    /* Remove the maximum width for smaller screens */
   }
 }
