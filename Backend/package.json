@@ -21,6 +21,7 @@
     "joi": "^17.10.2",
     "mongoose": "^7.5.2",
     "nodemon": "^3.0.1",
-    "otp-generator": "^4.0.1"
+    "otp-generator": "^4.0.1",
+    "springedge": "^1.0.6"
   }
 }

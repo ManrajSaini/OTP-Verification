@@ -4,11 +4,10 @@ import OtpInput from "react-otp-input";
 import { useState } from 'react';
 import './Otp.css'
 import api from '../Api/Api'
-
+import Snackbar from './Snackbar';
 
 
 const Otp = ({number, navigate, setNumber, response}) => {
-
 
   const handleClick=async()=>{
     try{
@@ -17,15 +16,26 @@ const Otp = ({number, navigate, setNumber, response}) => {
         phoneNumber: number.substring(number.length-10),    
         otp :otp  
       }
-      const data = await api.post('/api/verify', obj)
-      console.log(data.data);
-      navigate('/success')
+      const data = await api.post('/api/verify', obj);
+  
+      if(data.data.success === true){
+        navigate('/success')
+      }else {
+        
+        setError('Invalid OTP. Please try again.');
+      }
     }
     catch(err){
       console.log(`Error: ${err.message}`);
     }
   }
+
+  const closeSnackbar = () => {
+    setError(null); // Clear the error message
+  };
+
   const [otp, setOtp] = useState('');
+  const [error, setError] = useState(null);
   return (
     <div className="app-body">
     <img className="hand-img" src={handImg} alt="otp-art"></img>
@@ -72,8 +82,12 @@ const Otp = ({number, navigate, setNumber, response}) => {
     }}>
       Verify
     </button>
+
+    {error && (
+        <Snackbar open={true} message={error} onClose={closeSnackbar} />
+      )}
   </div>
   )
 }
 
-export default Otp
+export default Otp;

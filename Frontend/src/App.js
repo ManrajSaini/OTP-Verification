@@ -5,7 +5,6 @@ import Success from './Views/Success';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import api from './Api/Api'
 
 function App() {
 

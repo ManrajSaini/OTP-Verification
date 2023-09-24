@@ -4,10 +4,13 @@ import applogo from "../Assets/AK_logo.png"
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/material.css";
 import api from '../Api/Api'
-
+import { useState } from 'react';
+import Snackbar from './Snackbar';
 
 const SignUp = ({number, setNumber, navigate}) => {
 
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
 
   const handleClick=async()=>{
     try{
@@ -17,13 +20,22 @@ const SignUp = ({number, setNumber, navigate}) => {
       }
       const data = await api.post('/api/signin', obj)
     
-      alert(data.data.data.otp);
-      navigate('/otp')
+      setSnackbarMessage(data.data.data.otp);
+      setSnackbarOpen(true);
+
+      setTimeout(() => {
+        navigate('/otp');
+      }, 3000);
     }
     catch(err){
       console.log(`Error: ${err.message}`);
     }
   }
+
+  const closeSnackbar = () => {
+    setSnackbarOpen(false);
+    setSnackbarMessage('');
+  };
 
   
   return (
@@ -58,6 +70,14 @@ const SignUp = ({number, setNumber, navigate}) => {
         }}>
         Sign In with OTP
       </button>
+
+      {snackbarOpen && (
+        <Snackbar
+          open={snackbarOpen}
+          message={snackbarMessage}
+          onClose={closeSnackbar}
+        />
+      )}
     </div>
   )
 }
