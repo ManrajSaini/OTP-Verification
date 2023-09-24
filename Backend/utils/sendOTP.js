@@ -1,37 +1,20 @@
 const dotenv = require("dotenv");
+const fast2sms = require("fast-two-sms");
 
 dotenv.config();
 
-async function sendOTP(otp, phoneNumber){
+async function sendOTP(otp, phoneNumber, res) {
+    const options = {
+        authorization: process.env.YOUR_API_KEY,
+        message: `${otp} is the code for AdmitKard Account Verification. Validity 30 mins`,
+        numbers: [phoneNumber]
+    };
 
     try {
-        var req = await axios.post(process.env.OTP_URL);
-
-        req.headers({
-            "authorization": process.env.YOUR_API_KEY
-        });
-
-        req.form({
-            "variables_values" : otp,
-            "message" : `${otp} is the code for AdmitKard Account Verification. Validity 30 mins`,
-            "route": "otp",
-            "numbers" : phoneNumber
-        });
-
-        // return res.send({
-        //     "success": true,
-        //     "error_code": 200,
-        //     "message": "successfully sent the OTP",
-        //     "data": null
-        // });
-
-    } catch (err) {
-        // return res.send({
-        //     "success": false,
-        //     "error_code": 404,
-        //     "message": err.details[0].message,
-        //     "data": null
-        // });
+        await fast2sms.sendMessage(options);
+        res.send("OTP sent Successfully");
+    } catch (error) {
+        res.status(500).send(error.message);
     }
 }
 

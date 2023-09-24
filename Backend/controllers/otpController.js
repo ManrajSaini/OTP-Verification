@@ -41,7 +41,7 @@ const signinUser = async(req,res) => {
     const otp = generateOTP();
 
     try {
-        sendOTP(otp, phoneNumber);
+        sendOTP(otp, phoneNumber, res);
 
         const oldUser = await User.findOne({phoneNumber: phoneNumber});
 
@@ -89,6 +89,7 @@ const signinUser = async(req,res) => {
 
 const otpVerification = async(req,res) => {
     try {
+        const countryCode = req.body.countryCode;
         const phoneNumber = req.body.phoneNumber;
         const inputOTP = req.body.otp;
 
@@ -102,6 +103,7 @@ const otpVerification = async(req,res) => {
         }
 
         const inputSchema = Joi.object({
+            countryCode: Joi.string(),
             phoneNumber: Joi.string().required().pattern(/^[0-9]{10}$/),
             otp: Joi.number().integer().min(1000).max(9999).required()
         });
