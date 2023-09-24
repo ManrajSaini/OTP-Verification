@@ -132,7 +132,7 @@ const otpVerification = async(req,res) => {
             });
         }
 
-        if(oldUser.otp !== inputOTP){
+        if(oldUser.otp.toString() !== inputOTP){
             return res.send({
                 "success": false,
                 "error_code": 402,
