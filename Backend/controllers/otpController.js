@@ -13,11 +13,11 @@ const signinUser = async(req,res) => {
     const countryCode = req.body.countryCode;
     const phoneNumber = req.body.phoneNumber;
 
-    if(!countryCode || !phoneNumber){
+    if(!phoneNumber){
         return res.send({
             "success": false,
             "error_code": 400,
-            "message": "Enter Country Code and Phone Number",
+            "message": "Enter Phone Number",
             "data": null
         });
     }
