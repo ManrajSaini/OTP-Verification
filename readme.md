@@ -46,7 +46,7 @@ Replace your-fast2sms-api-key with your Fast2SMS API key and your-mongodb-connec
 
 
 The frontend should now be running on http://localhost:3000.    
-The Backend is deployed on render (link): https://otp-verification-ir24.onrender.com     
+The Backend is deployed on render .  
 
 Open your web browser and go to http://localhost:3000 to access the app.    
 
