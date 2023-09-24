@@ -2,7 +2,7 @@
 
 This is a simple mobile number verification app that allows users to enter their mobile number, receive an OTP (One-Time Password), and verify it. The app consists of three screens:
 
-# **Key Feature: User can receive OTP on their valid Phone Number's**
+# **Key Feature: User can receive OTP on their valid Phone Number's (Only work from 9AM to 8PM)**
 
 1. **Mobile Number Screen:** Users can enter their mobile number and choose their country code (optional).
 2. **OTP Verification Screen:** After entering the mobile number, users receive an OTP on the same screen via a snackbar notification and on provided Phone Number. They can enter the OTP digit by digit.
